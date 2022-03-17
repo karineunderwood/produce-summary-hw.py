@@ -1,40 +1,23 @@
-print("Day 1")
-the_file = open("um-deliveries-day-1.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
-
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
-
-    print(f"Delivered {count} {melon}s for total of ${amount}")
-the_file.close()
-
-
-print("Day 2")
-the_file = open("um-deliveries-day-2.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
-
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
+def melon_count_all_days(day_num, path):
+    """Here there's a function with a day number and path to the deliveries."""
+    
+    print("Day", day_num)
+    deliveries = open(path)
+    for line in deliveries:
+        # this will remove extra whitespace "right side" of the line
+        line = line.rstrip() 
+        #  will creat a list of strings
+        words = line.split('|')
+        #  assign variables to each item
+        melon = words[0]
+        count = words[1]
+        amount = words[2]
 
     print(f"Delivered {count} {melon}s for total of ${amount}")
-the_file.close()
+    
+    deliveries.close()
 
-
-print("Day 3")
-the_file = open("um-deliveries-day-3.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
-
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
-
-    print(f"Delivered {count} {melon}s for total of ${amount}")
-the_file.close()
+# Call all the functions for the 3 days.
+melon_count_all_days(1, "um-deliveries-day-1.txt")
+melon_count_all_days(2, "um-deliveries-day-2.txt")
+melon_count_all_days(3, "um-deliveries-day-3.txt")
